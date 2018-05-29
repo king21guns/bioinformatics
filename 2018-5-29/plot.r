@@ -1,0 +1,13 @@
+library(ggseqlogo)
+library(ggplot2)
+x<-matrix(scan("forward_primer"),nrow=4,byrow=TRUE)
+rownames(x)<-c('A','C','G','T')
+y<-matrix(scan("reverse_primer"),nrow=4,byrow=TRUE)
+rownames(y)<-c("A","C","G","T")
+pdf(file="forward_primer.pdf",40,8)
+ggseqlogo(x)
+dev.off()
+pdf(file="reverse_primer.pdf",40,8)
+ggseqlogo(y)
+dev.off()
+
